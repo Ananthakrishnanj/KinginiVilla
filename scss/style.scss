@@ -223,7 +223,7 @@ h5,
     text-transform: uppercase;
     letter-spacing: 0.4em;
     font-weight: 500;
-    font-size: 23px !important;
+    font-size: 30px !important;
     text-align: center;
     .caption {
         font-weight: 200;
@@ -1008,14 +1008,14 @@ textarea.form-control {
             z-index: 2;
             position: relative;
         }
-        .subheading {
-            color: $white;
-            text-transform: uppercase;
-            letter-spacing: .1em;
-            font-size: 12px;
-            margin-bottom: 5px;
-            opacity: .6;
-        }
+        // .subheading {
+        //     color: $white;
+        //     text-transform: uppercase;
+        //     letter-spacing: .1em;
+        //     font-size: 12px;
+        //     margin-bottom: 5px;
+        //     opacity: .6;
+        // }
         .heading {
             color: $white;
             margin: 0 0 10px 0;
