@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="css/flaticon.css">
   <link rel="stylesheet" href="css/icomoon.css">
   <link rel="stylesheet" href="scss/style.css">
+  <link rel="icon" type="image/png" href="images/icons/KinginiLogo.png"/>
 </head>
 
 <body>
@@ -122,7 +123,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-6 col-lg-4">
+      <div class="col-md-6 col-lg-6">
         <div class="media block-6">
           <div class="icon"><span class="flaticon-double-bed"></span></div>
           <div class="media-body">
@@ -131,7 +132,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-6 col-lg-4">
+      <div class="col-md-6 col-lg-6">
         <div class="media block-6">
           <div class="icon"><span class="flaticon-wifi"></span></div>
           <div class="media-body">
@@ -140,7 +141,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-6 col-lg-4">
+      <div class="col-md-6 col-lg-6">
         <div class="media block-6">
           <div class="icon"><span class="flaticon-customer-service"></span></div>
           <div class="media-body">
@@ -168,7 +169,7 @@
           </div>
         </div>
       </div> -->
-      <div class="col-md-6 col-lg-4">
+      <div class="col-md-6 col-lg-6">
         <div class="media block-6">
           <div class="icon"><span class="flaticon-dinner"></span></div>
           <div class="media-body">

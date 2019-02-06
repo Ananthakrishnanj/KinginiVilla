@@ -75,7 +75,7 @@
 				</form>
 
 				<div class="login100-more" style="background-image: url('images/bg.jpg');">
-				<div class="hero-text-container">
+				<div class="hero-text-container">					
 					<h3 class="hero-text">KINGINI</h3>
 					<p class="hero-text caption">LAKE VIEW VILLA</p>
 				</div>
