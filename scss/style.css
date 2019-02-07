@@ -8972,6 +8972,13 @@ textarea.form-control {
   background: #fc3c3c !important;
 }
 
+.black-bg {
+  background-image: url("../images/bg_1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
 .site-section {
   padding: 7em 0;
 }
@@ -9600,6 +9607,10 @@ textarea.form-control {
   font-size: 16px;
 }
 
+.block-13 .heading {
+  color: #000 !important;
+}
+
 .block-13 .owl-stage-outer {
   padding-bottom: 7em;
 }
@@ -10086,28 +10097,6 @@ textarea.form-control {
   font-style: italic;
 }
 
-.section-heading .subheading-sm {
-  margin-bottom: 30px;
-  color: #999999;
-  font-size: 18px;
-  text-transform: uppercase;
-  letter-spacing: .1em;
-  position: relative;
-  display: inline-block;
-  font-weight: 300;
-}
-
-.section-heading .subheading-sm:after {
-  width: 80px;
-  height: 2px;
-  background: #999999;
-  position: absolute;
-  left: 120%;
-  top: 50%;
-  transform: translateY(-50%);
-  content: "";
-}
-
 .section-heading .heading {
   font-size: 50px;
   line-height: 1.2;
@@ -10252,6 +10241,28 @@ textarea.form-control {
 
 @media (min-width: 992px) {
   .block-30 .heading {
+    font-size: 50px;
+    font-weight: 100;
+    letter-spacing: 4px;
+  }
+}
+
+.block-30 .banner-text {
+  color: #eaebe1;
+  font-size: 22px;
+  line-height: 1.1;
+  font-weight: 200;
+  margin-bottom: 50px;
+}
+
+@media (min-width: 768px) {
+  .block-30 .banner-text {
+    font-size: 35px;
+  }
+}
+
+@media (min-width: 992px) {
+  .block-30 .banner-text {
     font-size: 50px;
     font-weight: 100;
     letter-spacing: 4px;
@@ -10562,6 +10573,10 @@ textarea.form-control {
 
 .bcrumbs .sep {
   color: rgba(255, 255, 255, 0.5);
+}
+
+.viewport-width {
+  width: 100vw !important;
 }
 
 #ftco-loader {

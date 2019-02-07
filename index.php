@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
   <link rel="stylesheet" href="css/animate.css">
   <link rel="stylesheet" href="css/owl.carousel.min.css">
@@ -20,20 +21,81 @@
   <link rel="stylesheet" href="css/icomoon.css">
   <link rel="stylesheet" href="scss/style.css">
   <link rel="icon" type="image/png" href="images/icons/KinginiLogo.png"/>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 
 <body>
 
+<!-- Modal -->
+<div class="modal fade viewport-width" id="bookingModalCenter" tabindex="-1" role="dialog" aria-labelledby="bookingModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="bookingModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <form>
+      <div class="form-group">
+      <label for="inputName4">Name</label>
+      <input type="text" class="form-control" id="inputName4" placeholder="Full-Name"  autocomplete="off">
+    </div>
+    <div class="form-group">
+      <label for="inputEmail4">Email</label>
+      <input type="email" class="form-control" id="inputEmail4" placeholder="Email"  autocomplete="off">
+    </div>
+    <div class="form-group">
+      <label for="inputNumber4">Contact-Number</label>
+      <input type="tel" class="form-control" id="inputNumber4" placeholder="Number"  autocomplete="off">
+    </div>
+  
+  <div class="form-row">
+  <div class="form-group col-md-6">
+  <label for="checkin">Adults</label>
+                    <div class="field-icon-wrap">
+                      <div class="icon"></div>
+                      <select name="" id="" class="form-control">
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                        <option value="">4+</option>
+                      </select>
+                    </div>
+  </div>
+  <div class="form-group col-md-6">
+  <label for="checkin">Children</label>
+                    <div class="field-icon-wrap">
+                      <div class="icon"></div>
+                      <select name="" id="" class="form-control">
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                        <option value="">4+</option>
+                      </select>
+                    </div>
+  </div>
+</div>
+</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Book!</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal ending -->
+
+
   <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container" style="justify-content:center !important">
-      <a class="navbar-brand " href="index.html">Kingini<p class="caption">Lake View Villa</p></a>
-
-      <!-- <div class="collapse navbar-collapse" id="ftco-nav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
-        </ul>
-      </div> -->
-    </div>
+      <a class="navbar-brand " href="index.html">Kingini<p class="caption">Lake View Villa</p></a>      
+      </div>
   </nav>
   <!-- END nav -->
 
@@ -65,49 +127,45 @@
                 <label for="checkin">Check In</label>
                 <div class="field-icon-wrap">
                   <div class="icon"><span class="icon-calendar"></span></div>
-                  <input type="text" id="checkin_date" class="form-control">
+                  <input type="text" id="checkin_date" class="form-control" autocomplete="off">
                 </div>
               </div>
               <div class="col-md-6 mb-3 mb-lg-0 col-lg-3">
                 <label for="checkin">Check Out</label>
                 <div class="field-icon-wrap">
                   <div class="icon"><span class="icon-calendar"></span></div>
-                  <input type="text" id="checkout_date" class="form-control">
+                  <input type="text" id="checkout_date" class="form-control" autocomplete="off">
                 </div>
               </div>
               <div class="col-md-6 mb-3 mb-md-0 col-lg-3">
                 <div class="row">
                   <div class="col-md-6 mb-3 mb-md-0">
-                    <label for="checkin">Adults</label>
+                    <label for="checkin">Rooms</label>
                     <div class="field-icon-wrap">
                       <div class="icon"></div>
                       <select name="" id="" class="form-control">
-                        <option value="">0</option>
-                        <option value="">1</option>
-                        <option value="">2</option>
-                        <option value="">3</option>
-                        <option value="">4+</option>
-
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
                       </select>
                     </div>
                   </div>
                   <div class="col-md-6 mb-3 mb-md-0">
-                    <label for="checkin">Children</label>
+                    <label for="checkin">Room-Type</label>
                     <div class="field-icon-wrap">
                       <div class="icon"></div>
                       <select name="" id="" class="form-control">
-                        <option value="">0</option>
-                        <option value="">1</option>
-                        <option value="">2</option>
-                        <option value="">3</option>
-                        <option value="">4+</option>
+                        <option value="">AC</option>
+                        <option value="">Non-AC</option>
+                        <option value="">Any</option>                        
                       </select>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="col-md-6 col-lg-3 align-self-end">
-                <button class="btn btn-primary btn-block">Check Availabilty</button>
+              <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#bookingModalCenter">Check Availabilty</button>
               </div>
             </div>
           </form>
@@ -178,15 +236,13 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
 
-  <div class="site-section block-13 bg-light">
+  <div class="site-section block-13 bg-black">
     <div class="container">
       <div class="row mb-5">
         <div class="col-md-7 section-heading">
-  
           <h2 class="heading">Rooms &amp; Suites</h2>
           <p>We provide you with neat rooms to make you perfectly comfortable, so that you feel like you are at Home!</p>
         </div>
@@ -281,16 +337,16 @@
 
 
 
-  <div class="block-30 block-30-sm item" style="background-image: url('images/bg.jpg');"
+  <!-- <div class="block-30 block-30-sm item"
     data-stellar-background-ratio="0.5">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-12">
-          <h2 class="heading">Quality accommodation that exceeds the expectations</h2>
+          <h2 class="banner-text">Quality accommodation that exceeds the expectations</h2>
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
 
   <footer class="footer">

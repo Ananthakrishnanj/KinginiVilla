@@ -57,7 +57,7 @@ h5,
     left: 0;
     right: 0;
     z-index: 3;
-    top: 10px;
+    top: 10px;    
     @include media-breakpoint-down(md) {
         background: $black !important;
         top: 0;
@@ -496,10 +496,16 @@ textarea.form-control {
     background: $primary !important;
 }
 
+.black-bg{
+    background-image: url("../images/bg_1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
 .site-section {
     padding: 7em 0;
 }
-
 .ftco-bg-dark {
     background: #3c312e;
 }
@@ -1094,6 +1100,10 @@ textarea.form-control {
 }
 
 .block-13 {
+.heading{
+    color: $black !important;
+}
+
     .owl-stage-outer {
         padding-bottom: 7em;
     }
@@ -1527,26 +1537,6 @@ textarea.form-control {
 }
 
 .section-heading {
-    .subheading-sm {
-        margin-bottom: 30px;
-        color: lighten($black, 60%);
-        font-size: 18px;
-        text-transform: uppercase;
-        letter-spacing: .1em;
-        position: relative;
-        display: inline-block;
-        font-weight: 300;
-        &:after {
-            width: 80px;
-            height: 2px;
-            background: lighten($black, 60%);
-            position: absolute;
-            left: 120%;
-            top: 50%;
-            transform: translateY(-50%);
-            content: "";
-        }
-    }
     .heading {
         font-size: 50px;
         line-height: 1.2;
@@ -1663,6 +1653,21 @@ textarea.form-control {
     }
     .heading {
 		color: #eaebe1;
+        font-size: 22px;
+        line-height: 1.1;
+        font-weight: 200;
+        margin-bottom: 50px;
+        @include media-breakpoint-up(md) {
+            font-size: 35px;
+        }
+        @include media-breakpoint-up(lg) {
+            font-size: 50px;
+            font-weight: 100;
+            letter-spacing: 4px;
+        }
+    }
+    .banner-text {
+        	color: #eaebe1;
         font-size: 22px;
         line-height: 1.1;
         font-weight: 200;
@@ -1948,6 +1953,9 @@ textarea.form-control {
     }
 }
 
+.viewport-width {
+    width: 100vw !important;
+}
 #ftco-loader {
     position: fixed;
     width: 96px;
