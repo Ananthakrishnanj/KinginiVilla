@@ -11,9 +11,7 @@
 
 $white: #fff;
 $black: #000;
-html {
-    // overflow-x: hidden;
-}
+
 
 body {
     font-family: $font-family-sans-serif;
@@ -1557,7 +1555,7 @@ textarea.form-control {
         .form-control {
             height: 52px !important;
             position: relative;
-            padding-right: 40px;
+            padding-right: 17px;
             box-shadow: none !important;
             color: lighten($black, 65%);
         }
@@ -1577,6 +1575,10 @@ textarea.form-control {
         height: 52px;
         color: $white;
     }
+}
+
+#hidden-option{
+    display: none;
 }
 
 .block-31 {

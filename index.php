@@ -134,7 +134,7 @@
                 <label for="checkin">Check Out</label>
                 <div class="field-icon-wrap">
                   <div class="icon"><span class="icon-calendar"></span></div>
-                  <input type="text" id="checkout_date" class="form-control" autocomplete="off">
+                  <input type="text" id="checkout_date" class="form-control" autocomplete="off"  onchange="checkdate()">
                 </div>
               </div>
               <div class="col-md-6 mb-3 mb-md-0 col-lg-3">
@@ -143,7 +143,8 @@
                     <label for="checkin">Rooms</label>
                     <div class="field-icon-wrap">
                       <div class="icon"></div>
-                      <select name="" id="" class="form-control">
+                      <select  onchange="disable()" name="room-dropdown" id="numberOfRooms" class="form-control">
+                        <option value="SELECT">Select</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -155,10 +156,13 @@
                     <label for="checkin">Room-Type</label>
                     <div class="field-icon-wrap">
                       <div class="icon"></div>
-                      <select name="" id="" class="form-control">
-                        <option value="">AC</option>
-                        <option value="">Non-AC</option>
-                        <option value="">Any</option>                        
+                      <select name="room-type" id="roomType" class="form-control">
+                      <option value="SELECT">Select</option>
+                        <option value="AC">AC</option>
+                        <option value="NON-AC">Non-AC</option>
+                        <option value="ANY">Any</option>         
+                        <option id="hidden-option" value="BOTH">Both</option>                        
+
                       </select>
                     </div>
                   </div>
@@ -405,7 +409,7 @@
   <script>
     new WOW().init();
     </script>
-
+  <script src="js/disableText.js"></script>
   <script src="js/aos.js"></script>
   <script src="js/jquery.animateNumber.min.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>

@@ -10120,7 +10120,7 @@ textarea.form-control {
 .block-32 .field-icon-wrap .form-control {
   height: 52px !important;
   position: relative;
-  padding-right: 40px;
+  padding-right: 17px;
   box-shadow: none !important;
   color: #a6a6a6;
 }
@@ -10141,6 +10141,10 @@ textarea.form-control {
 .block-32 .btn {
   height: 52px;
   color: #fff;
+}
+
+#hidden-option {
+  display: none;
 }
 
 .block-31 {
