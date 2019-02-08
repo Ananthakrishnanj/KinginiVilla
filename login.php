@@ -2,12 +2,10 @@
 include('./include/db_connect.php');
 include('./include/funtions.php');
 sec_session_start();
-if(isset($_POST['loginButton'])) {
-	if(login($_POST['userName'],$_POST['password'],$conn))
-	{
-		
-	}
-	else {
+if (isset($_POST['loginButton'])) {
+	if (login($_POST['userName'], $_POST['password'], $conn)) {
+
+	} else {
 		$invalid = true;
 	}
 }
@@ -39,21 +37,16 @@ if(isset($_POST['loginButton'])) {
 	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/login_util.css">
-	<link rel="stylesheet" type="text/css" href="css/login_main.css">
+	<link rel="stylesheet" type="text/css" href="css/login_main.css">	
 <!--===============================================================================================-->
 </head>
 <body style="background-color: #666666;">
 	
-	<?php 
-		if(isset($invalid)) {
-			if($invalid == true) {
-				echo '<script> alert("invalid username or password") </script>';
-			}
-		}
-	?>
+	
 	<div class="limiter">
 		<div class="container-login100">
-			<div class="wrap-login100">
+	
+			<div class="wrap-login100">				
 				<form class="login100-form validate-form" method="POST">
 					<span class="login100-form-title p-b-43">
 						Admin Login
@@ -72,6 +65,17 @@ if(isset($_POST['loginButton'])) {
 						<span class="focus-input100"></span>
 						<span class="label-input100">Password</span>
 					</div>
+													
+		<?php 
+				if (isset($invalid)) {
+					if ($invalid == true) {
+						echo '<div class="alert alert-danger alert-dismissible">
+						<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+						<strong>Danger!</strong> Indicates a dangerous or potentially negative action.
+					  </div>';
+					}
+				}
+				?>		
 
 					<div class="flex-sb-m w-full p-t-3 p-b-32">
 						<div class="contact100-form-checkbox">
