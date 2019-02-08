@@ -1,6 +1,16 @@
 <?php
 include('./include/db_connect.php');
-
+include('./include/funtions.php');
+sec_session_start();
+if(isset($_POST['loginButton'])) {
+	if(login($_POST['userName'],$_POST['password'],$conn))
+	{
+		
+	}
+	else {
+		$invalid = true;
+	}
+}
 ?>
 
 <!DOCTYPE html>
@@ -34,24 +44,31 @@ include('./include/db_connect.php');
 </head>
 <body style="background-color: #666666;">
 	
+	<?php 
+		if(isset($invalid)) {
+			if($invalid == true) {
+				echo '<script> alert("invalid username or password") </script>';
+			}
+		}
+	?>
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form" method="POST">
 					<span class="login100-form-title p-b-43">
 						Admin Login
 					</span>
 					
 					
 					<div class="wrap-input100 validate-input" data-validate = "User name is required">
-						<input class="input100" type="text" name="text">
+						<input class="input100" type="text" name="userName">
 						<span class="focus-input100"></span>
 						<span class="label-input100">User name</span>
 					</div>
 					
 					
 					<div class="wrap-input100 validate-input" data-validate="Password is required">
-						<input class="input100" type="password" name="pass">
+						<input class="input100" type="password" name="password">
 						<span class="focus-input100"></span>
 						<span class="label-input100">Password</span>
 					</div>
@@ -72,8 +89,8 @@ include('./include/db_connect.php');
 					</div>
 			
 
-					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
+					<div class="container-login100-form-btn"> 
+						<button class="login100-form-btn" type="submit" name="loginButton">
 							Login
 						</button>
 					</div>										

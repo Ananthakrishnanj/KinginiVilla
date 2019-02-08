@@ -3,12 +3,11 @@
 include('credentials.php');
 
 // Create connection
-$conn = new mysqli(SERVER_NAME, DB_USERNAME, DB_PASSWORD);
+$conn = new mysqli(SERVER_NAME, DB_USERNAME, DB_PASSWORD, DB_NAME);
 
 // Check connection
 if ($conn->connect_error) {
-   header("../error.html");
+    header("Location: ../error.html");
 } 
-
 
 ?>
