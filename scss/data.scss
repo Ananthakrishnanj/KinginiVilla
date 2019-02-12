@@ -66,16 +66,20 @@ $black: #000;
 }
 
 .booking-info-container {
-    background-image: linear-gradient(to bottom right, #000000, #15000b, #1c001a, #1a022a, #000b3d);
+    // background-image: linear-gradient(to bottom , #000000, #15000b, #1c001a, #1a022a, #000b3d);
+    background-color: #f6f6f6;
+background-image: linear-gradient(to bottom, #f7f7f7 0%, #e9e9e9 74%);
     height: 100%;
+    background-attachment: fixed;
 }
 
 .header-bg{
-    // background-color: #300b3f;
-    // background-image: linear-gradient(to bottom, #000000 10%, #300b3f 65%);
-    background-image: linear-gradient(to bottom , #000000, #15000b, #1c001a, #1a022a, #000b3d);
-
-    
+    background-image: linear-gradient(to top,#1c001a, #1a022a, #000b3d);
+    // background-image:url('../images/bg.jpg');
+    // background-repeat:no-repeat;
+    // background-position: top;
+    // background-size: cover;
+    // background-attachment: fixed;
     text-align: center;
     h3{
         color:white;
@@ -178,9 +182,12 @@ textarea.form-control {
     display: none;
 }
 
+.booking-table{
+    width:70%;
+}
 
 .theme-color{
-    background-image: linear-gradient(to right , #000000, #15000b, #1c001a, #1a022a, #000b3d);
+    background-image: linear-gradient(to bottom , #000000, #15000b, #1c001a, #1a022a, #000b3d);
     
     tr{
         th{

@@ -68,10 +68,7 @@
 	</div>
 </div>
 	
-	<div class="card">
-  <!-- <h5 class="card-header">Featured</h5> -->
-  <div class="card-body">
-  <table class="table">
+  <table class="table table-hover booking-table">
   <thead class="theme-color">
     <tr>
       <th scope="col">ID</th>
@@ -135,7 +132,7 @@
 </table>
     <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
   </div>
-</div>
+
 
 
 	<script src="js/jquery.min.js"></script>
