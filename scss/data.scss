@@ -183,7 +183,7 @@ textarea.form-control {
 }
 
 .booking-table{
-    width:70%;
+border: 5px solid #fff;
 }
 
 .theme-color{
@@ -200,4 +200,10 @@ textarea.form-control {
 .table-body{
 background-color: #d9d9d9;
 background-image: linear-gradient(315deg, #d9d9d9 0%, #f6f2f2 74%);
+tr{
+    td{
+        font-weight: 300;
+        letter-spacing: 0.07rem;
+    }
+}
 }
