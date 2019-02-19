@@ -127,7 +127,7 @@
                 <label for="checkin">Check In</label>
                 <div class="field-icon-wrap">
                   <div class="icon"><span class="icon-calendar"></span></div>
-                  <input type="text" id="checkin_date" class="form-control" autocomplete="off">
+                  <input type="text" id="checkin_date" class="form-control" autocomplete="off">                  
                 </div>
               </div>
               <div class="col-md-6 mb-3 mb-lg-0 col-lg-3">

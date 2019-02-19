@@ -261,9 +261,16 @@ $(document).ready(function($) {
     fixedContentPos: false
   });
 
+	var today = new Date();
+	var dd = today.getDate();
+	var mm = today.getMonth() + 1;
+	var yyyy = today.getFullYear();
+	today = dd + '-' + mm + '-' + yyyy;
+	
   $('#checkin_date, #checkout_date').datepicker({
-	  'format': 'd MM, yyyy',
-	  'autoclose': true
+	  'format': 'd-mm-yyyy',
+		'autoclose': true,
+		'startDate': today 	
 	});
 
 
