@@ -129,8 +129,7 @@
     </tr>
    
   </tbody>
-</table>
-    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+</table>    
   </div>
 
 
