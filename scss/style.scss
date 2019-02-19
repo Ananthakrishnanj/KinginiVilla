@@ -18,8 +18,28 @@ body {
     background: $white;
     font-size: 16px;
     line-height: 1.8;
-    font-weight: 300;
+    font-weight: 300; 
 }
+
+
+    /* Scrollbar Styling */
+    ::-webkit-scrollbar {
+        width: 5px !important;
+    }
+    
+    ::-webkit-scrollbar-track {
+        background-color: #ffffff;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background: #dc3546 !important; 
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #da0c20 !important; 
+    }
+     
+
 
 a {
     transition: .3s all ease;
