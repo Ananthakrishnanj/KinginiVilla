@@ -29,6 +29,7 @@ if (!isset($_SESSION['LOGIN_STATUS']) || $_SESSION['LOGIN_STATUS'] == false) {
   <link rel="stylesheet" href="css/flaticon.css">
   <link rel="stylesheet" href="css/icomoon.css">
   <link rel="stylesheet" href="scss/style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -58,14 +59,14 @@ if (!isset($_SESSION['LOGIN_STATUS']) || $_SESSION['LOGIN_STATUS'] == false) {
                 <label for="checkin">Start Date</label>
                 <div class="field-icon-wrap">
                   <div class="icon"><span class="icon-calendar"></span></div>
-                  <input type="text" name="checkindate" id="checkin_date" class="form-control" autocomplete="off">
+                  <input type="text" name="checkindate" id="checkin_date" class="form-control" autocomplete="off" required>
                 </div>
               </div>
               <div class="col-md-6 mb-3 mb-lg-0 col-lg-4">
                 <label for="checkin">End Date</label>
                 <div class="field-icon-wrap">
                   <div class="icon"><span class="icon-calendar"></span></div>
-                  <input type="text" name="checkoutdate" id="checkout_date" class="form-control" autocomplete="off"  onchange="checkdate()">
+                  <input type="text" name="checkoutdate" id="checkout_date" class="form-control" autocomplete="off" required onchange="checkdate()">
                 </div>
               </div>
              
@@ -95,7 +96,7 @@ if (!isset($_SESSION['LOGIN_STATUS']) || $_SESSION['LOGIN_STATUS'] == false) {
       <th scope="col">Children</th>
       <th scope="col">Rooms</th>
       <th scope="col">Room Type</th>
-      <th scope="col">Comments</th>
+      <th scope="col">Delete</th>
       </tr>
     </thead>
   
@@ -108,7 +109,9 @@ if (!isset($_SESSION['LOGIN_STATUS']) || $_SESSION['LOGIN_STATUS'] == false) {
         
     if ($result->num_rows > 0) {   
       $index=1;     
-          while($row = $result->fetch_assoc()) {        
+          while($row = $result->fetch_assoc()) {  
+            $id = $row['bookingid'];
+
       echo '<tr>
       <th scope="row">'.$index.'</th>
       <td >'.$row["name"].'</td>
@@ -120,14 +123,18 @@ if (!isset($_SESSION['LOGIN_STATUS']) || $_SESSION['LOGIN_STATUS'] == false) {
       <td >'.$row["adults"].'</td>
       <td >'.$row["children"].'</td>
       <td >'.$row["room"].'</td>
-      <td >'.$row["roomtype"].'</td>
-      <td >'.$row["comments"].'</td>
+      <td >'.$row["roomtype"].'</td>        
+      <td>    
+      <button onclick=if(confirm("Delete?"))window.location="delete.php?id='.$id.'" class="fa fa-trash" aria-hidden="true"></button>    
+      </td>
       </tr>';
       $index++;
           }
         }
      else {
-      echo "0 results";
+      echo '<tr>
+      <th scope="row" colspan=12 style=text-align:center>No Bookings Available!</th>
+      </tr>';
     }
 
     echo'</tbody></table>';
