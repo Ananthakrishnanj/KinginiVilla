@@ -133,7 +133,7 @@
                 <label for="checkin">Check Out</label>
                 <div class="field-icon-wrap">
                   <div class="icon"><span class="icon-calendar"></span></div>
-                  <input type="text" id="checkout_date" class="form-control" autocomplete="off"  onchange="checkdate()">
+                  <input type="text" id="checkout_date" class="form-control" autocomplete="off">
                 </div>
               </div>
               <div class="col-md-6 mb-3 mb-md-0 col-lg-3">
@@ -413,6 +413,12 @@ window.onload = () => {
     let el = document.querySelector('[alt="www.000webhost.com"]').parentNode.parentNode;
     el.parentNode.removeChild(el);
 }
+
+  function validate() {
+  if(document.getElementById('checkin_date').value > document.getElementById('checkout_date').value) {
+    console.log("Incorrrect");
+  }
+  }
     </script>
   <script src="js/disableText.js"></script>
   <script src="js/aos.js"></script>
@@ -420,6 +426,10 @@ window.onload = () => {
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
 </body>
 

@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php 
+include('./include/db_connect.php');
+include('./include/funtions.php');
+sec_session_start();
+if (!isset($_SESSION['LOGIN_STATUS']) || $_SESSION['LOGIN_STATUS'] == false) {
+  header("Location: error.html");
+}
 
+?>
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,6 +35,9 @@
 </head>
 
 <body>
+  <?php
+
+  ?>
 <div class="booking-info-container">
 
 <div class="jumbotron jumbotron-fluid header-bg">
@@ -40,26 +51,26 @@
     <div class="row mb-5">
       <div class="col-md-12">
         <div class="block-32">
-          <form action="#">
+          <form action="Data.php" method="POST">
             <div class="row">
 
               <div class="col-md-6 mb-3 mb-lg-0 col-lg-4">
                 <label for="checkin">Start Date</label>
                 <div class="field-icon-wrap">
                   <div class="icon"><span class="icon-calendar"></span></div>
-                  <input type="text" id="checkin_date" class="form-control" autocomplete="off">
+                  <input type="text" name="checkindate" id="checkin_date" class="form-control" autocomplete="off">
                 </div>
               </div>
               <div class="col-md-6 mb-3 mb-lg-0 col-lg-4">
                 <label for="checkin">End Date</label>
                 <div class="field-icon-wrap">
                   <div class="icon"><span class="icon-calendar"></span></div>
-                  <input type="text" id="checkout_date" class="form-control" autocomplete="off"  onchange="checkdate()">
+                  <input type="text" name="checkoutdate" id="checkout_date" class="form-control" autocomplete="off"  onchange="checkdate()">
                 </div>
               </div>
              
               <div class="col-md-6 col-lg-4 align-self-end">
-              <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#bookingModalCenter">Check Bookings</button>
+              <button type="submit" name="checkBooking" class="btn btn-primary btn-block" data-toggle="modal" data-target="#bookingModalCenter">Check Bookings</button>
               </div>
             </div>
           </form>
@@ -67,72 +78,63 @@
       </div>
 	</div>
 </div>
-	
-  <table class="table table-hover booking-table">
-  <thead class="theme-color">
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Name</th>
-      <th scope="col">Booking Date</th>
-	  <th scope="col">Check-in</th>
-	  <th scope="col">Check-out</th>
-	  <th scope="col">Mobile</th>
-	  <th scope="col">Email</th>
-	  <th scope="col">Adults</th>
-	  <th scope="col">Children</th>
-	  <th scope="col">Rooms</th>
-	  <th scope="col">Room Type</th>
-    </tr>
-  </thead>
+<?php
 
-  <tbody class="table-body">
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark Antony</td>
-      <td>10/02/2019</td>
-	  <td>14/02/2019</td>
-	  <td>17/02/2019</td>
-	  <td>8156985013</td>
-	  <td>markantony56@gmail.com</td>
-	  <td>6</td>
-	  <td>2</td>
-	  <td>2</td>
-      <td>BOTH</td>
-	</tr>
-	
-	<tr>
-      <th scope="row">2</th>
-      <td>Mark Antony</td>
-      <td>10/02/2019</td>
-	  <td>14/02/2019</td>
-	  <td>17/02/2019</td>
-	  <td>8156985013</td>
-	  <td>markantony56@gmail.com</td>
-	  <td>6</td>
-	  <td>2</td>
-	  <td>2</td>
-      <td>BOTH</td>
-	</tr>
-	
-	<tr>
-      <th scope="row">3</th>
-      <td>Mark Antony</td>
-      <td>10/02/2019</td>
-	  <td>14/02/2019</td>
-	  <td>17/02/2019</td>
-	  <td>8156985013</td>
-	  <td>markantony56@gmail.com</td>
-	  <td>6</td>
-	  <td>2</td>
-	  <td>2</td>
-      <td>BOTH</td>
-    </tr>
-   
-  </tbody>
-</table>    
+  if(isset($_POST['checkBooking'])){
+    echo '<table class="table table-hover booking-table">
+    <thead class="theme-color">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Booking Date</th>
+      <th scope="col">Check-in</th>
+      <th scope="col">Check-out</th>
+      <th scope="col">Mobile</th>
+      <th scope="col">Email</th>
+      <th scope="col">Adults</th>
+      <th scope="col">Children</th>
+      <th scope="col">Rooms</th>
+      <th scope="col">Room Type</th>
+      <th scope="col">Comments</th>
+      </tr>
+    </thead>
+  
+    <tbody class="table-body">';
+
+    $checkin  = fixdate($_POST['checkindate']);
+    $checkout  = fixdate($_POST['checkoutdate']);
+    $sql = "SELECT * FROM bookings WHERE checkin>='".$checkin."' AND checkout<='".$checkout."'";    
+    $result = $conn->query($sql);
+        
+    if ($result->num_rows > 0) {   
+      $index=1;     
+          while($row = $result->fetch_assoc()) {        
+      echo '<tr>
+      <th scope="row">'.$index.'</th>
+      <td >'.$row["name"].'</td>
+      <td >'.$row["bookingdate"].'</td>
+      <td >'.$row["checkin"].'</td>
+      <td >'.$row["checkout"].'</td>
+      <td >'.$row["mobile"].'</td>
+      <td >'.$row["email"].'</td>
+      <td >'.$row["adults"].'</td>
+      <td >'.$row["children"].'</td>
+      <td >'.$row["room"].'</td>
+      <td >'.$row["roomtype"].'</td>
+      <td >'.$row["comments"].'</td>
+      </tr>';
+      $index++;
+          }
+        }
+     else {
+      echo "0 results";
+    }
+
+    echo'</tbody></table>';
+  }
+  ?>
+  
   </div>
-
-
 
 	<script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>

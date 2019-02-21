@@ -1,6 +1,7 @@
 <?php
 
 function sec_session_start() {
+    session_start();    
     $session_name = 'kinginivilla';   // Set a custom session name 
     $secure = 'SECURE';
     // This stops JavaScript being able to access the session id.
@@ -15,8 +16,8 @@ function sec_session_start() {
     session_set_cookie_params($cookieParams["lifetime"], $cookieParams["path"], $cookieParams["domain"], $secure, $httponly);
     // Sets the session name to the one set above.
     session_name($session_name);
-    session_start();            // Start the PHP session 
-    session_regenerate_id();    // regenerated the session, delete the old one. 
+            // Start the PHP session 
+    // session_regenerate_id();    // regenerated the session, delete the old one. 
 }
 
 
@@ -47,4 +48,10 @@ function login($username, $password, $mysqli) {
                             }
                     }
 }
+
+
+function fixdate($date) {
+    return date('Y-m-d', strtotime($date));
+}
+
 ?>

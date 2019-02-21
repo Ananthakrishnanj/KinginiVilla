@@ -267,13 +267,43 @@ $(document).ready(function($) {
 	var yyyy = today.getFullYear();
 	today = dd + '-' + mm + '-' + yyyy;
 	
-  $('#checkin_date, #checkout_date').datepicker({
-	  'format': 'd-mm-yyyy',
-		'autoclose': true,
-		'startDate': today 	
+  // $('#checkin_date, #checkout_date').datepicker({
+	//   'format': 'dd-mm-yyyy',
+	// 	'autoclose': true,
+	// 	'disableTouchKeyboard': true,
+	// 	'startDate': today,	
+	// });
+	$(function(){		
+		$('#checkin_date').datepicker({	
+		format: 'dd-mm-yyyy',
+		autoclose: true,
+		disableTouchKeyboard: true,
+		startDate: today,					
+		onSelect: function(selectdate) {
+				console.log(selectdate);
+				var dt = new Date(selectdate);
+				dt.setDate(dt.getDate()+1);
+				$("#checkout_date").datepicker("option","startDate",dt);
+			}
+		});
+
+
+		$('#checkout_date').datepicker({
+			format: 'dd-mm-yyyy',
+		autoclose: true,
+		disableTouchKeyboard: true,
+		})
+		.on('changeDate', function(selectdate) {			
+			var dt = new Date(selectdate);			
+			dt.setDate(dt.getDate()-1);
+			console.log(dt);
+			$("#checkin_date").datepicker({
+				endDate: dt
+			});
+		}
+	);
 	});
-
-
 
 });
 
+    

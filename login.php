@@ -2,11 +2,16 @@
 include('./include/db_connect.php');
 include('./include/funtions.php');
 sec_session_start();
+$_SESSION['LOGIN_STATUS'] = false;
 if (isset($_POST['loginButton'])) {
 	if (login($_POST['userName'], $_POST['password'], $conn)) {
-
-	} else {
+		$invalid = false;
+		$_SESSION['LOGIN_STATUS'] = true;
+		header("Location:Data.php");		
+	} 
+	else {
 		$invalid = true;
+		$_SESSION['LOGIN_STATUS'] = false;
 	}
 }
 ?>
@@ -71,7 +76,7 @@ if (isset($_POST['loginButton'])) {
 					if ($invalid == true) {
 						echo '<div class="alert alert-danger alert-dismissible">
 						<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-						<strong>Danger!</strong> Indicates a dangerous or potentially negative action.
+						<strong>Invalid Credentials! </strong> Invalid username or password
 					  </div>';
 					}
 				}
