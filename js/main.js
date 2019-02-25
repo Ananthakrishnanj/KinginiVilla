@@ -302,6 +302,18 @@ $(document).ready(function($) {
 		);
 	});
 
+	$('#admin_checkout_date').datepicker({
+		format: 'dd-mm-yyyy',
+		autoclose: true,
+		disableTouchKeyboard: true,
+	});
+
+	$('#admin_checkin_date').datepicker({
+		format: 'dd-mm-yyyy',
+		autoclose: true,
+		disableTouchKeyboard: true,
+	});
+
 });
 
     

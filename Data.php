@@ -59,14 +59,14 @@ if (!isset($_SESSION['LOGIN_STATUS']) || $_SESSION['LOGIN_STATUS'] == false) {
                 <label for="checkin">Start Date</label>
                 <div class="field-icon-wrap">
                   <div class="icon"><span class="icon-calendar"></span></div>
-                  <input type="text" name="checkindate" id="checkin_date" class="form-control" autocomplete="off" required>
+                  <input type="text" name="checkindate" id="admin_checkin_date" class="form-control" autocomplete="off" required>
                 </div>
               </div>
               <div class="col-md-6 mb-3 mb-lg-0 col-lg-4">
                 <label for="checkin">End Date</label>
                 <div class="field-icon-wrap">
                   <div class="icon"><span class="icon-calendar"></span></div>
-                  <input type="text" name="checkoutdate" id="checkout_date" class="form-control" autocomplete="off" required onchange="checkdate()">
+                  <input type="text" name="checkoutdate" id="admin_checkout_date" class="form-control" autocomplete="off" required onchange="checkdate()">
                 </div>
               </div>
              
