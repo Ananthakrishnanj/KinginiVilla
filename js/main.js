@@ -279,29 +279,27 @@ $(document).ready(function($) {
 		autoclose: true,
 		disableTouchKeyboard: true,
 		startDate: today,					
-		onSelect: function(selectdate) {
-				console.log(selectdate);
-				var dt = new Date(selectdate);
-				dt.setDate(dt.getDate()+1);
-				$("#checkout_date").datepicker("option","startDate",dt);
-			}
-		});
+		}).on('changeDate', function(selectdate) {	
+			var date = $('#checkin_date').datepicker('getDate');		
+			var dt = new Date(date);			
+			dt.setDate(dt.getDate()+1);		 
+			$('#checkout_date').datepicker('setStartDate', dt);			
+		}
+	);
 
 
 		$('#checkout_date').datepicker({
 			format: 'dd-mm-yyyy',
 		autoclose: true,
 		disableTouchKeyboard: true,
-		})
-		.on('changeDate', function(selectdate) {			
-			var dt = new Date(selectdate);			
-			dt.setDate(dt.getDate()-1);
-			console.log(dt);
-			$("#checkin_date").datepicker({
-				endDate: dt
-			});
+		startDate: today,	
+		}).on('changeDate', function(selectdate) {	
+			var date = $('#checkout_date').datepicker('getDate');		
+			var dt = new Date(date);			
+			dt.setDate(dt.getDate()-1);		 
+			$('#checkin_date').datepicker('setEndDate', dt);			
 		}
-	);
+		);
 	});
 
 });
