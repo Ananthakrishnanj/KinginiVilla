@@ -41,15 +41,15 @@
       <form>
       <div class="form-group">
       <label for="inputName4">Name</label>
-      <input type="text" class="form-control" id="inputName4" placeholder="Full-Name"  autocomplete="off">
+      <input type="text" class="form-control" id="inputName4" name="name" placeholder="Full-Name"  autocomplete="off">
     </div>
     <div class="form-group">
       <label for="inputEmail4">Email</label>
-      <input type="email" class="form-control" id="inputEmail4" placeholder="Email"  autocomplete="off">
+      <input type="email" class="form-control" id="inputEmail4" name="email" placeholder="Email"  autocomplete="off">
     </div>
     <div class="form-group">
       <label for="inputNumber4">Contact-Number</label>
-      <input type="tel" class="form-control" id="inputNumber4" placeholder="Number"  autocomplete="off">
+      <input type="tel" class="form-control" id="inputNumber4" name="contact" placeholder="Number"  autocomplete="off">
     </div>
   
   <div class="form-row">
@@ -57,7 +57,7 @@
   <label for="checkin">Adults</label>
                     <div class="field-icon-wrap">
                       <div class="icon"></div>
-                      <select name="" id="" class="form-control">
+                      <select name="" id="" class="form-control" name="adults">
                         <option value="">1</option>
                         <option value="">2</option>
                         <option value="">3</option>
@@ -69,7 +69,7 @@
   <label for="checkin">Children</label>
                     <div class="field-icon-wrap">
                       <div class="icon"></div>
-                      <select name="" id="" class="form-control">
+                      <select name="" id="" class="form-control" name="children">
                         <option value="">1</option>
                         <option value="">2</option>
                         <option value="">3</option>
@@ -78,8 +78,8 @@
                     </div>
   </div>
 </div>
-
 </form>
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -93,7 +93,7 @@
 
   <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container" style="justify-content:center !important">
-      <a class="navbar-brand " href="index.html">Kingini<p class="caption">Lake View Villa</p></a>      
+      <a class="navbar-brand " href="index.php">Kingini<p class="caption">Lake View Villa</p></a>      
       </div>
   </nav>
   <!-- END nav -->
@@ -120,20 +120,20 @@
     <div class="row mb-5">
       <div class="col-md-12">
         <div class="block-32">
-          <form action="#">
+          <form action="index.php" method="POST">
             <div class="row">
               <div class="col-md-6 mb-3 mb-lg-0 col-lg-3">
                 <label for="checkin">Check In</label>
                 <div class="field-icon-wrap">
                   <div class="icon"><span class="icon-calendar"></span></div>
-                  <input type="text" id="checkin_date" class="form-control" autocomplete="off">                  
+                  <input type="text" id="checkin_date" name="checkin" class="form-control" autocomplete="off">                  
                 </div>
               </div>
               <div class="col-md-6 mb-3 mb-lg-0 col-lg-3">
                 <label for="checkin">Check Out</label>
                 <div class="field-icon-wrap">
                   <div class="icon"><span class="icon-calendar"></span></div>
-                  <input type="text" id="checkout_date" class="form-control" autocomplete="off">
+                  <input type="text" id="checkout_date" name="checkout" class="form-control" autocomplete="off">
                 </div>
               </div>
               <div class="col-md-6 mb-3 mb-md-0 col-lg-3">
@@ -142,9 +142,8 @@
                     <label for="checkin">Rooms</label>
                     <div class="field-icon-wrap">
                       <div class="icon"></div>
-                      <select  onchange="disable()" name="room-dropdown" id="numberOfRooms" class="form-control">
-                        <option value="SELECT">Select</option>
-                        <option value="1">1</option>
+                      <select  onchange="disable()" name="room-dropdown" id="numberOfRooms" class="form-control" name="rooms">                        
+                        <option value="1" selected="selected">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
@@ -155,13 +154,11 @@
                     <label for="checkin">Room-Type</label>
                     <div class="field-icon-wrap">
                       <div class="icon"></div>
-                      <select name="room-type" id="roomType" class="form-control">
-                      <option value="SELECT">Select</option>
+                      <select name="room-type" id="roomType" class="form-control" name="roomtype">                      
                         <option value="AC">AC</option>
                         <option value="NON-AC">Non-AC</option>
-                        <option value="ANY">Any</option>         
+                        <option value="ANY" selected="selected">Any</option>         
                         <option id="hidden-option" value="BOTH">Both</option>                        
-
                       </select>
                     </div>
                   </div>
@@ -357,17 +354,18 @@
       <div class="row mb-5">
         <div class="col-md-6 col-lg-4">
           <h3 class="heading-section">About Us</h3>
-          <p class="mb-5">Set on the banks of the famous Lake, Punnamada we offer you accommodation and all the care you need to make your Stay perfect while you enjoy the beautiful Lake View</p>
-          <p><a href="#" class="btn btn-primary px-4">Button</a></p>
+          <p class="mb-5">Set on the banks of the famous Lake, Punnamada we offer you accommodation and all the care you need to make your Stay perfect while you enjoy the beautiful Lake View</p>          
         </div>  
-        <div class="col-lg-4"></div>
+        <div class="col-lg-4">
+        
+        </div>
         <div class="col-md-6 col-lg-4">
           <div class="block-23">
             <h3 class="heading-section">Contact Info</h3>
             <ul>
-              <li><span class="icon icon-map-marker"></span><span class="text">Punnamada, Alappuzha, Kerala, India</span></li>
-              <li><a href="#"><span class="icon icon-phone"></span><span class="text">9446056106/9048414451/9633931385</span></a></li>
-              <li><a href="#"><span class="icon icon-envelope"></span><span class="text">kinginivilla@gmail.com</span></a></li>
+              <li><a href="https://www.google.com/maps/place/Kingini+lake+view+villa/@9.532882,76.3528267,17z/data=!4m12!1m6!3m5!1s0x3b0885473ebb9395:0xd63d1e2f46aaf703!2sKingini+lake+view+villa!8m2!3d9.532882!4d76.3528267!3m4!1s0x3b0885473ebb9395:0xd63d1e2f46aaf703!8m2!3d9.532882!4d76.3528267" target="_BLANK"><span class="icon icon-map-marker"></span><span class="text">Punnamada, Alappuzha<br/> Kerala, India</span></a></li>
+              <li><a href="#"><span class="icon icon-phone"></span><span class="text">9446056106<br/>9048414451<br/>9633931385</span></a></li>
+              <li><a href="mailto:kinginivilla@gmail.com"><span class="icon icon-envelope"></span><span class="text">kinginivilla@gmail.com</span></a></li>
               <!-- <li><span class="icon icon-clock-o"></span><span class="text">Monday &mdash; Friday 8:00am - 5:00pm</span></li> -->
             </ul>
           </div>
@@ -423,7 +421,17 @@ window.onload = () => {
   <script src="js/disableText.js"></script>
   <script src="js/aos.js"></script>
   <script src="js/jquery.animateNumber.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script>
+function myMap() {
+var mapProp= {
+  center:new google.maps.LatLng(9.492090,76.347990),
+  zoom:5,
+};
+var map = new google.maps.Map(document.getElementById('googleMap'),mapProp);
+console.log("MAP : ",map)
+}
+</script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDp5twE0xXfEN32I4lGMTrNkHc0UHe_1aM&callback=myMap"></script> 
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
 

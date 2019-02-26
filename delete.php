@@ -2,7 +2,8 @@
 // include database connection
 include('./include/db_connect.php');
 include('./include/funtions.php');
- 
+sec_session_start();
+
 try {
      
     // get record ID
@@ -11,7 +12,7 @@ try {
  
     // delete query
     $stmt = $conn->prepare("DELETE FROM bookings WHERE bookingid = '".$id."'");
-     
+
     if($stmt->execute()){
         // redirect to read records page and 
         // tell the user record was deleted

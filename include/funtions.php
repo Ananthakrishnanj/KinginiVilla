@@ -54,4 +54,8 @@ function fixdate($date) {
     return date('Y-m-d', strtotime($date));
 }
 
+function revertdate($date) {
+    return date('d-m-Y', strtotime($date));
+}
+
 ?>
