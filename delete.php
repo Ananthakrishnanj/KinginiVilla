@@ -20,7 +20,7 @@ try {
         $_SESSION['checkout'] = $_GET['checkout'];
         header('Location: Data.php');
     }else{
-        header("Location: error.php");
+        header("Location: error.html");
     }
     
 }

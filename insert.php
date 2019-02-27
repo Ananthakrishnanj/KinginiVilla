@@ -8,7 +8,7 @@ try {
      
     // get record ID
     // isset() is a PHP function used to verify if a value is there or not
-    $id=isset($_GET['id']) ? $_GET['id'] : header("Location: index.php");
+    $id=isset($_GET['id']) ? $_GET['id'] : header("Location: logout.php");
  
     // delete query
     $stmt = $conn->prepare("INSERT INTO bookings( name, bookingdate, checkin, checkout, mobile, email, adults, children, room, roomtype, comments) VALUES ");

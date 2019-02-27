@@ -6,7 +6,7 @@ include('./include/funtions.php');
 sec_session_start();
 
 if (!isset($_SESSION['LOGIN_STATUS']) || $_SESSION['LOGIN_STATUS'] == false) {
-  header("Location: error.html");
+  header("Location: logout.php");
 }
 
 ?>
