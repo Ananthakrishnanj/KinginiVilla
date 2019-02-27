@@ -11,7 +11,7 @@ try {
     $id=isset($_GET['id']) ? $_GET['id'] : header("Location: index.php");
  
     // delete query
-    $stmt = $conn->prepare("DELETE FROM bookings WHERE bookingid = '".$id."'");
+    $stmt = $conn->prepare("INSERT INTO bookings( name, bookingdate, checkin, checkout, mobile, email, adults, children, room, roomtype, comments) VALUES ");
 
     if($stmt->execute()){
         // redirect to read records page and 

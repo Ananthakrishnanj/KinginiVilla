@@ -4,6 +4,7 @@
 include('./include/db_connect.php');
 include('./include/funtions.php');
 sec_session_start();
+
 if (!isset($_SESSION['LOGIN_STATUS']) || $_SESSION['LOGIN_STATUS'] == false) {
   header("Location: error.html");
 }
@@ -36,9 +37,7 @@ if (!isset($_SESSION['LOGIN_STATUS']) || $_SESSION['LOGIN_STATUS'] == false) {
 </head>
 
 <body>
-  <?php
 
-  ?>
 <div class="booking-info-container">
 
 <div class="jumbotron jumbotron-fluid header-bg">
@@ -59,14 +58,14 @@ if (!isset($_SESSION['LOGIN_STATUS']) || $_SESSION['LOGIN_STATUS'] == false) {
                 <label for="checkin">Start Date</label>
                 <div class="field-icon-wrap">
                   <div class="icon"><span class="icon-calendar"></span></div>
-                  <input type="text" name="checkindate" id="admin_checkin_date" class="form-control" autocomplete="off" required>
+                  <input type="text" name="checkindate" id="admin_checkin_date" class="form-control" autocomplete="off" required <?php if(isset($_POST['checkBooking'])&& isset($_POST['checkindate']) && isset($_POST['checkoutdate'])) {echo' value="'.$_POST['checkindate'].'"';} ?><?php if(isset($_SESSION['checkin'])) {echo' value="'.revertdate($_SESSION['checkin']).'"'; $_POST['checkindate']=fixdate($_SESSION['checkin']);}?>>
                 </div>
               </div>
               <div class="col-md-6 mb-3 mb-lg-0 col-lg-4">
                 <label for="checkin">End Date</label>
                 <div class="field-icon-wrap">
                   <div class="icon"><span class="icon-calendar"></span></div>
-                  <input type="text" name="checkoutdate" id="admin_checkout_date" class="form-control" autocomplete="off" required onchange="checkdate()">
+                  <input type="text" name="checkoutdate" id="admin_checkout_date" class="form-control" autocomplete="off" required <?php if(isset($_POST['checkBooking'])&& isset($_POST['checkindate']) && isset($_POST['checkoutdate'])) {echo' value="'.$_POST['checkoutdate'].'"';} ?> <?php if(isset($_SESSION['checkout'])){ echo' value="'.revertdate($_SESSION['checkout']).'"'; $_POST['checkoutdate']=fixdate($_SESSION['checkout']); $_POST['checkBooking']=true;}?>>
                 </div>
               </div>
              
@@ -80,7 +79,6 @@ if (!isset($_SESSION['LOGIN_STATUS']) || $_SESSION['LOGIN_STATUS'] == false) {
 	</div>
 </div>
 <?php
-
   if(isset($_POST['checkBooking'])){
     echo '<table class="table table-hover booking-table">
     <thead class="theme-color">
@@ -106,7 +104,8 @@ if (!isset($_SESSION['LOGIN_STATUS']) || $_SESSION['LOGIN_STATUS'] == false) {
     $checkout  = fixdate($_POST['checkoutdate']);
     $sql = "SELECT * FROM bookings WHERE checkin>='".$checkin."' AND checkout<='".$checkout."'";    
     $result = $conn->query($sql);
-        
+    unset($_SESSION['checkout']); unset($_SESSION['checkin']);
+
     if ($result->num_rows > 0) {   
       $index=1;     
           while($row = $result->fetch_assoc()) {  
@@ -123,9 +122,9 @@ if (!isset($_SESSION['LOGIN_STATUS']) || $_SESSION['LOGIN_STATUS'] == false) {
       <td >'.$row["adults"].'</td>
       <td >'.$row["children"].'</td>
       <td >'.$row["room"].'</td>
-      <td >'.$row["roomtype"].'</td>        
+      <td >'.$row["roomtype"].'</td>              
       <td>    
-      <button onclick=if(confirm("Delete?"))window.location="delete.php?id='.$id.'" class="fa fa-trash" aria-hidden="true"></button>    
+      <button onclick=if(confirm("Delete?"))window.location="delete.php?id='.$id.'&checkin='.$_POST['checkindate'].'&checkout='.$_POST['checkoutdate'].'" class="fa fa-trash" aria-hidden="true"></button>    
       </td>
       </tr>';
       $index++;
@@ -138,6 +137,7 @@ if (!isset($_SESSION['LOGIN_STATUS']) || $_SESSION['LOGIN_STATUS'] == false) {
     }
 
     echo'</tbody></table>';
+
   }
   ?>
   

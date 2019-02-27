@@ -37,8 +37,8 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-      <form>
+      <div class="modal-body">      
+      <form action="insert.php" method="POST">
       <div class="form-group">
       <label for="inputName4">Name</label>
       <input type="text" class="form-control" id="inputName4" name="name" placeholder="Full-Name"  autocomplete="off">
