@@ -44,6 +44,7 @@ if (isset($_POST['loginButton'])) {
 	<link rel="stylesheet" type="text/css" href="css/login_util.css">
 	<link rel="stylesheet" type="text/css" href="css/login_main.css">	
 <!--===============================================================================================-->
+<link rel="icon" type="image/png" href="images/icons/KinginiLogo.png"/>
 </head>
 <body style="background-color: #666666;">
 	
