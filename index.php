@@ -274,7 +274,7 @@
             <div class="item">
               <div class="block-34">
                 <div class="image">
-                  <a href="#"><img src="images/room_2.jpg" alt="Image placeholder"></a>
+                  <a href="#"><img src="images/room-2.jpg" alt="Image placeholder"></a>
                 </div>
                 <div class="text">
                   <h2 class="heading">Ac Room</h2>
@@ -293,7 +293,7 @@
             <div class="item">
               <div class="block-34">
                 <div class="image">
-                  <a href="#"><img src="images/room_3.jpg" alt="Image placeholder"></a>
+                  <a href="#"><img src="images/room-3.jpg" alt="Image placeholder"></a>
                 </div>
                 <div class="text">
                   <h2 class="heading">Ac Room</h2>
@@ -312,7 +312,7 @@
             <div class="item">
               <div class="block-34">
                 <div class="image">
-                  <a href="#"><img src="images/img_4.jpg" alt="Image placeholder"></a>
+                  <a href="#"><img src="images/room_1.jpg" alt="Image placeholder"></a>
                 </div>
                 <div class="text">
                   <h2 class="heading">Non-Ac Room</h2>
