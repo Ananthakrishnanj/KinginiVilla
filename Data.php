@@ -43,6 +43,9 @@ if (!isset($_SESSION['LOGIN_STATUS']) || $_SESSION['LOGIN_STATUS'] == false) {
 
 <div class="jumbotron jumbotron-fluid header-bg">
   <div class="container">
+  <a href="logout.php"><button type="button" class="btn btn-default btn-sm">
+          <span class="glyphicon glyphicon-log-out"></span> Log out
+        </button></a>
     <h3 class="display-4">KINGINI</h3>
     <p class="lead">Lake View Villa </p>
   </div>
